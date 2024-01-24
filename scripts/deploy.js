@@ -1,6 +1,6 @@
 async function main() {
   // if you changed the name of the contract, be sure to update this here!
-  const MyToken = await hre.ethers.getContractFactory("CoqSportif");
+  const MyToken = await hre.ethers.getContractFactory("MyToken");
 
   const nft = await MyToken.deploy();
 
@@ -11,7 +11,7 @@ async function main() {
   // mint one to yourself!
   const signer0 = await ethers.provider.getSigner(0);
   // update the IPFS CID to be your metadata CID
-  await nft.safeMint(await signer0.getAddress(), "ipfs://baguqeeraaopaku6cgfnush7uvjryccemiai3vnibxs6c4xs3eicets2wappq");
+  await nft.safeMint(await signer0.getAddress(), "ipfs://CID");
 
   console.log("NFT Minted!");
 }
